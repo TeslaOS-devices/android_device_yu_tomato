@@ -42,6 +42,9 @@ BOARD_HARDWARE_CLASS += $(DEVICE_PATH)/cmhw/src
 # Compression - Smoosh all the things
 TARGET_TRANSPARENT_COMPRESSION_METHOD := lz4
 
+# CPU
+TARGET_CPU_CORTEX_A53 := true
+
 # Dexopt, only if we can fit that in
 ifneq ($(TARGET_TRANSPARENT_COMPRESSION_METHOD),)
 ifeq ($(HOST_OS),linux)
@@ -74,6 +77,7 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 13576175616 # 13576192000 - 16384
 
 # Recovery
 TARGET_RECOVERY_PIXEL_FORMAT := ABGR_8888
+TARGET_RECOVERY_DENSITY := xhdpi
 
 # SELinux
 BOARD_SEPOLICY_DIRS += \
@@ -87,9 +91,6 @@ BOARD_SEPOLICY_UNION += \
     system_server.te \
     system.te \
     wcnss_service.te
-
-# Video
-TARGET_HAVE_SIGNED_VENUS_FW := true
 
 # Wifi
 TARGET_PROVIDES_WCNSS_QMI := true
