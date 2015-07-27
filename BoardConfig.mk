@@ -99,5 +99,11 @@ TARGET_USES_QCOM_WCNSS_QMI := true
 WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/wlan.ko"
 WIFI_DRIVER_MODULE_NAME := "wlan"
 
+#TWRP
+DEVICE_RESOLUTION := 720x1280
+TW_TARGET_USES_QCOM_BSP := true
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+TW_INCLUDE_CRYPTO := true
+
 # inherit from the proprietary version
 -include vendor/yu/tomato/BoardConfigVendor.mk
